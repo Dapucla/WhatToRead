@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  WhatToRead
+//  ЧтоБыПочитать
 //
-//  Created by Даниил Алексеев on 19.03.2022.
+//  Created by Даниил Алексеев on 28.06.2022.
 //
 
 import UIKit

@@ -1,10 +1,3 @@
-//
-//  HomeVC.swift
-//  WhatToRead
-//
-//  Created by Даниил Алексеев on 19.03.2022.
-//
-
 import UIKit
 
 class HomeVC: UIViewController {
@@ -68,10 +61,13 @@ extension HomeVC: UICollectionViewDataSource {
         myCell.layer.shadowOpacity = 0.5
         myCell.layer.masksToBounds = false
         
-        let title = UILabel(frame: CGRect(x: 0, y: 0, width: myCell.bounds.size.width, height: 40))
+//        let title = UILabel(frame: CGRect(x: 0, y: 0, width: myCell.bounds.size.width, height: 40))
+        let title = UILabel(frame: CGRect(x: 5, y: 0, width: myCell.bounds.size.width, height: 50))
+        title.lineBreakMode = .byWordWrapping
+        title.numberOfLines = 2
         title.textColor = UIColor.black
         title.text = modelData[indexPath.row]
-        title.textAlignment = .center
+        title.textAlignment = .left
         title.textColor = .systemYellow
         myCell.contentView.addSubview(title)
         
@@ -84,5 +80,8 @@ extension HomeVC: UICollectionViewDataSource {
 extension HomeVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("User tapped on item \(indexPath.row)")
+        
+        performSegue(withIdentifier: "showBook", sender: self)
+        
     }
 }
